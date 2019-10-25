@@ -1,0 +1,6 @@
+*.pyc
+lib/
+model-bin/
+bin/
+stubs/
+*.class
