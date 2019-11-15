@@ -31,9 +31,9 @@ The easiest approach to using the dataClay tool (aka `dataclaycmd`) is using the
 
     alias dataclaycmd="docker run \
                            -v \$PWD/cfgfiles/:/usr/src/dataclay/client/cfgfiles/:ro \
-                           -v \$PWD/model-bin/:model-bin/ \
-                           -v \$PWD/stubs/:stubs/ \
-                           bscdataclay/client:2.0
+                           -v \$PWD/model-bin/:/usr/src/dataclay/client/model-bin/ \
+                           -v \$PWD/stubs/:/usr/src/dataclay/client/stubs/ \
+                           bscdataclay/client:2.0"
 
 **IMPORTANT**: Don't forget to escape the `$PWD` --the backslash is mandatory. If you have some path error or some anomalous behavior in your shell, put the explicit absolute full path for the scenario you are running.
 
