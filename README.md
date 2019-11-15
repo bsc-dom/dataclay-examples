@@ -25,6 +25,20 @@ library to work.
 We recommend to use a virtual environment under which the dataClay package is installed. The 
 `dataclaycmd` (dataClay tool) will use it, as well as the main application.
 
+### `dataclaycmd` usage
+
+The easiest approach to using the dataClay tool (aka `dataclaycmd`) is using the image [`bscdataclay/client`](https://hub.docker.com/r/bscdataclay/client). This examples try to be general and don't go into deployment details, but in most scenarios you will need to prepare the following alias for `dataclaycmd` to work:
+
+    alias dataclaycmd="docker run \
+                           -v \$PWD/cfgfiles/:/usr/src/dataclay/client/cfgfiles/:ro \
+                           -v \$PWD/model-bin/:model-bin/ \
+                           -v \$PWD/stubs/:stubs/ \
+                           bscdataclay/client:2.0
+
+**IMPORTANT**: Don't forget to escape the `$PWD` --the backslash is mandatory. If you have some path error or some anomalous behavior in your shell, put the explicit absolute full path for the scenario you are running.
+
+Note that you may need to also add the `--network=<docker network>` parameter in order for the dataClay tool to be able to reach the dataClay services. For example, if you have started dataClay through a `docker-compose` command, you can check the name of the networks with the command `docker network ls` and you will see a network named `<folder name>_default` which you can use. You should update the `cfgfiles/client.properties` according to your specific topology.
+
 ## Following the examples
 
 Each example folder has a README which explains the steps and the basic characteristics
