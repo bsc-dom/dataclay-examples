@@ -30,9 +30,9 @@ We recommend to use a virtual environment under which the dataClay package is in
 The easiest approach to using the dataClay tool (aka `dataclaycmd`) is using the image [`bscdataclay/client`](https://hub.docker.com/r/bscdataclay/client). This examples try to be general and don't go into deployment details, but in most scenarios you will need to prepare the following alias for `dataclaycmd` to work:
 
     alias dataclaycmd="docker run \
-                           -v \$PWD/cfgfiles/:/usr/src/dataclay/client/cfgfiles/:ro \
-                           -v \$PWD/model-bin/:/usr/src/dataclay/client/model-bin/ \
-                           -v \$PWD/stubs/:/usr/src/dataclay/client/stubs/ \
+                           -v \$PWD/cfgfiles/:/dataclay/cfgfiles/:ro \
+                           -v \$PWD/model-bin/:/dataclay/model-bin/ \
+                           -v \$PWD/stubs/:/dataclay/stubs/ \
                            bscdataclay/client:2.0"
 
 **IMPORTANT**: Don't forget to escape the `$PWD` --the backslash is mandatory. If you have some path error or some anomalous behavior in your shell, put the explicit absolute full path for the scenario you are running.
