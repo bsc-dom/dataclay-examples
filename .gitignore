@@ -4,3 +4,5 @@ model-bin/
 bin/
 stubs/
 *.class
+/.project
+/.pydevproject
