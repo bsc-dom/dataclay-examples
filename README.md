@@ -33,7 +33,7 @@ The easiest approach to using the dataClay tool (aka `dataclaycmd`) is using the
                            -v \$PWD/cfgfiles/:/dataclay/cfgfiles/:ro \
                            -v \$PWD/model-bin/:/dataclay/model-bin/ \
                            -v \$PWD/stubs/:/dataclay/stubs/ \
-                           bscdataclay/client:2.0"
+                           bscdataclay/client"
 
 **IMPORTANT**: Don't forget to escape the `$PWD` --the backslash is mandatory. If you have some path error or some anomalous behavior in your shell, put the explicit absolute full path for the scenario you are running.
 
